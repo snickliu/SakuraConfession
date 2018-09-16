@@ -524,6 +524,16 @@ function resetPlayer() {
     /*playpause.title = "Play";
 	  playpause.innerHTML = '<i class="fa fa-play fa-3x"></i>';*/
 }
+document.addEventListener("WeixinJSBridgeReady",function () {
+  togglePlay();
+}, false);
+// 其他应用在click/touch时触发播放
+document.addEventListener('click', function () {
+  togglePlay()
+})  
+document.addEventListener('touchstart', function () {
+  togglePlay()
+})
 function timeElapse(date) {
     var current = Date();
     var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
