@@ -329,7 +329,7 @@ img {
 }
 }
  </style>
-<body>
+<body style="visibility:hidden;">
     <div id="mainDiv">
       <div id="content">
         <div id="code">
@@ -438,6 +438,9 @@ together.setMilliseconds(0);
         return this;
     };
 })(jQuery);
+window.onload=function (){
+  document.body.style.cssText = 'visibility:visible;'
+}
 var timesconetent = 0;
 function timeElapse(date) {
     var current = Date();
