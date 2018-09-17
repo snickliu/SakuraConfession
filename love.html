@@ -31,9 +31,10 @@
 	bottom:0;
 }
 #container {
-	width:320px;
-	height:320px;
-	margin-bottom:50px;
+  width: 320px;
+  height: 320px;
+  margin-bottom: 10px;
+  margin-right: 0px;
 }
 #player {
 	width:320px;
@@ -73,8 +74,8 @@
 	position:absolute;
 	left:0%;
 	top:0;
-	width:45px;
-	height:45px;
+	width:50px;
+	height:50px;
 	color:#fff;
 	border:0;
 	outline:0;
@@ -83,6 +84,7 @@
 	border-radius:100%;
 	cursor:pointer;
 	z-index:10;
+  margin: 60px 0 0 200px;
 }
 #replay {
 	left:auto;
@@ -94,10 +96,10 @@
 }
 .play_pause i {
 	display:block;
-	line-height:45px;
+	line-height:50px;
 	font-style:normal;
 	font-family:'iconfont';
-	font-size:45px;
+	font-size:50px;
 	color:#cb9f9e;
 	cursor:pointer;
 }
@@ -250,7 +252,7 @@ img {
 #code {
   float: left;
   width: 100%;
-  height: 1200px;
+  height: 1350px;
   overflow-y: scroll;
 	color:#fff;
 	font-family:"Consolas","Monaco","Bitstream Vera Sans Mono","Courier New","sans-serif";
@@ -372,8 +374,8 @@ img {
     </div>
       <img class="anim-opacity2" src="./images/4.jpg">
       <div id="container">
-        <canvas id="audiocanvas" width="320" height="320">对不起，你的浏览器不支持Canvas标签！</canvas>
-        <canvas id="progress" width="320" height="320"></canvas>
+        <canvas style="display:none;" id="audiocanvas" width="320" height="320">对不起，你的浏览器不支持Canvas标签！</canvas>
+        <canvas style="display:none;" id="progress" width="320" height="320"></canvas>
         <!-- progress bar -->
         <div id="player">
           <audio id="audio" controls>
@@ -384,15 +386,15 @@ img {
               <div class="play_pause" id="play" title="Play" onClick="togglePlay()">
                 <i>&#xe600;</i>
               </div>
-              <div class="play_pause" id="replay" onclick="replayAudio()">
+              <div style="display:none;" class="play_pause" id="replay" onclick="replayAudio()">
                 <i>&#xe607;</i>
               </div>
-              <div class="voice">
+              <div style="display:none;" class="voice">
                 <i>&#xe608;</i>
                 <input id="volume" name="volume" min="0" max="1" step="0.1" type="range" onChange="setVolume()" /></div>
-              <div id="times">00:00/00:00</div></div>
+              <div style="display:none;" id="times">00:00/00:00</div></div>
             <!-- #controls -->
-            <div class="info">
+            <div class="info" style="display:none;">
               <p class="song">
                 <a href="javascript:void();" target="_blank"></a>草根</p>
               <p class="song">
@@ -599,12 +601,12 @@ document.addEventListener("WeixinJSBridgeReady",function () {
   togglePlay();
 }, false);
 // 其他应用在click/touch时触发播放
-document.addEventListener('click', function () {
-  togglePlay()
-})  
-document.addEventListener('touchstart', function () {
-  togglePlay()
-})
+// document.addEventListener('click', function () {
+//   togglePlay()
+// })  
+// document.addEventListener('touchstart', function () {
+//   togglePlay()
+// })
 
 
     // Utilities
